@@ -37,3 +37,24 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+jar {
+    manifest {
+        attributes 'Main-Class': 'myApp.App'
+    }
+}
+
+jib {
+      container {
+mainClass = 'myApp.App'
+labels = ["service.type": "spring-boot"]
+  }      
+from {
+     image = "localhost:5000/openjdk"
+     }
+to {
+   to.image = "localhost:5000/mygradleapp"
+        
+        }
+    }
+
+
