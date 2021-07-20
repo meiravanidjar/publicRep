@@ -49,10 +49,10 @@ mainClass = 'myApp.App'
 labels = ["service.type": "spring-boot"]
   }      
 from {
-     image = "localhost:5000/openjdk"
+     image = "192.168.49.2:5000/openjdk"
      }
 to {
-   to.image = "localhost:5000/mygradleapp"
+   to.image = "192.168.49.2:5000/mygradleapp"
         
         }
     }
